@@ -1,4 +1,4 @@
-
+''' 문자열 '''
 # 020. 사용자에게 이름을 요청하고 그 이름의 길이 출력
 # yourname = input("what is your name?: ")
 # // length = len(yourname)
