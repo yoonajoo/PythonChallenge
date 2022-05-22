@@ -112,9 +112,68 @@
 
 ''' 121. 사용자가 이름 목록을 쉽게 관리할 수 있는 프로그램을 생성한다. 사용자가 목록에 이름을 추가할 수 있 는 메뉴와 목록의 이름을 수정하는 메뉴, 목록에서 이름을 삭제하는 메뉴 그리고 목록의 모든 이름을 표시하는 메뉴를 화면에 표시한다. 또한, 프로그램을 종료하는 메뉴도 있어야 한다. 사용자가 메뉴 외에 다른 것을 선택하면 적절한 메시지를 표시한다.사용자가 선택한 메뉴의 작업이 끝나면 다시 메뉴가 표 시되도록 한다. 되도록 사용하기 쉽게 프로그램을 만들자.
 '''
+def one():
+    name = input("추가할 이름은 작성하세요: ")
+    names.append(name)
+    return names
 
+def two():
+    num = 0
+    for i in names:
+        print(num, i)
+        num = num + 1
+    select_num = int(input("수정하고 싶은 이름의 번호를 쓰세요: "))
+    name = input("새로 변경할 이름을 작성하세요: ")
+    names[select_num] = name
+    return names
+    
+def three():
+    num = 0
+    for i in names:
+        print(num, i)
+        num = num + 1
+    select_num = int(input("삭제하고 싶은 이름의 번호를 쓰세요: "))
+    del names[select_num]
+    return names
+    
+def four():
+    print("모든 이름을 표시합니다!")
+    num = 0
+    for i in names:
+        print(num, i)
+        num = num + 1
 
+def main():
+    
+    try_again = "y"
+    while try_again == "y":
+        print("1.이름 추가하기")
+        print("2.이름 수정하기")
+        print("3.이름 삭제하기")
+        print("4.모든 이름 표시하기")
+        print("5.프로그램 종료하기")
+        select = int(input("몇 번을 수행하시겠습니까?: "))
+    
+        if select == 1:
+            names = one()
+        elif select == 2:
+            names = two()
+        elif select == 3:
+            names = three()
+        elif select == 4:
+            names = four()
+        elif select == 5:
+            print("프로그램을 종료하겠습니다!")
+            try_again = "n"
+        else:
+            print("1~5사이의 숫자를 선택해주세요.")
 
+names = []  # 핵심
+main()            
+                 
+                
+                
+                
 ''' 122. 다음의 메뉴를 생성한다. 
 1) add to file 
 2) view all recods 
