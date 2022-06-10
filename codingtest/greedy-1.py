@@ -1,13 +1,9 @@
-# 92: 큰 수의 법칙
+# 92. 큰 수의 법칙
 
-
-n, m, k = map(int, input("n, m, k 값을 공백을 포함하여 입력하세요: ").split())
-
-data = list(map(int, input("K개의 자연수를 공백을 포함하여 입력하세요: ").split()))
+n, m, k = map(int, input("n, m, k를 공백 있게 입력하시오: ").split())
+data = list(map(int, input("리스트를 작성하시오: ").split()))
 
 data.sort()
-print(data)
-
 first = data[n-1]
 second = data[n-2]
 
@@ -18,15 +14,13 @@ while True:
         if m == 0:
             break
         else: 
-            result += first
-            m -= 1
-        
+            result = result + first
+            m = m - 1
+    
     if m == 0:
         break
-    else: 
-        result += second
-        m -= 1
+    else:
+        result = result + second
+        m = m - 1
         
 print(result)
-
-
